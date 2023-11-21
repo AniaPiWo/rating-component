@@ -1,17 +1,23 @@
 import "./App.css";
-import Stars from "./components/Stars";
+import Rating from "./components/Rating/Rating";
+import CreditCard from "./components/CreditCard/CreditCard";
 
 function App() {
   const defaultRating = localStorage.getItem("starRating");
 
   return (
-    <>
-      <Stars
-        defaultRating={defaultRating ? parseInt(defaultRating, 5) : undefined}
-        icon="❤"
-        color="hotpink"
-      />
-    </>
+    <div className="container">
+      <div>
+        <CreditCard />
+      </div>
+      <div className="container">
+        <Rating
+          defaultRating={defaultRating ? parseInt(defaultRating, 5) : undefined}
+          icon="❤"
+          color="hotpink"
+        />
+      </div>
+    </div>
   );
 }
 

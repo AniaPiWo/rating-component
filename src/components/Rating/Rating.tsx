@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import styles from "./Stars.module.css";
+import styles from "./Rating.module.css";
 
-interface StarsProps {
+interface RatingProps {
   count?: number;
   defaultRating?: number;
   icon?: string;
@@ -14,13 +14,13 @@ const DEFAULT_ICON = "★";
 const DEFAULT_UNSELECTED_COLOR = "grey";
 const DEFAULT_COLOR = "yellow";
 
-const Stars: FC<StarsProps> = ({
+const Rating: FC<RatingProps> = ({
   count = DEFAULT_COUNT,
   defaultRating,
   icon = DEFAULT_ICON,
   color = DEFAULT_COLOR,
   iconSize,
-}: StarsProps) => {
+}: RatingProps) => {
   const [rating, setRating] = useState(defaultRating);
   const [temporaryRating, setTemporaryRating] = useState(0);
 
@@ -67,4 +67,4 @@ const Stars: FC<StarsProps> = ({
   );
 };
 
-export default Stars;
+export default Rating;
